@@ -4,7 +4,8 @@ import React from 'react';
 import { PollyClient, SynthesizeSpeechCommand } from "@aws-sdk/client-polly";
 
 function App() {
-  const client = new PollyClient({ region: "eu-central-1", credentials: {accessKeyId: 'AKIARGDHLEABIQFE2KFB', secretAccessKey: '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'}});
+  console.log(process.env)
+  const client = new PollyClient({ region: process.env.REACT_APP_REGION, credentials: {accessKeyId: process.env.REACT_APP_ACCESS_KEY_ID, secretAccessKey: process.env.REACT_APP_ACCESS_KEY_SECRET }});
   const imageClick = async (str) => {
 
     // This code is not from Manu ! :D 
